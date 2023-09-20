@@ -24,7 +24,7 @@ requirements:
     - python >=3.6
     - qtpy
     - textdistance
-    - ryvencore ==0.3.1.*
+    - ryvencore ==0.4.*
     - waiting
 
 test:
