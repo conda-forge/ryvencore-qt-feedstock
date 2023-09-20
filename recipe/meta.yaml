@@ -1,5 +1,5 @@
 {% set name = "ryvencore-qt" %}
-{% set version = "0.3.1.4" %}
+{% set version = "0.4.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ryvencore-qt-{{ version }}.tar.gz
-  sha256: b3d35fbd2916d0c92a5d6c1e0dada00fdf264e2b14d84a9732a2751324b36fd8
+  sha256: 1b16a7402f4edc7eb035644344e7e45d45834db68ebc415a8995718bac8575d3
 
 build:
   number: 0
@@ -24,7 +24,7 @@ requirements:
     - python >=3.6
     - qtpy
     - textdistance
-    - ryvencore ==0.3.1.*
+    - ryvencore ==0.4.*
     - waiting
 
 test:
