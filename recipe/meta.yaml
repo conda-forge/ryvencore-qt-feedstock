@@ -18,10 +18,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.6,<=3.10
   run:
     - pyside2
-    - python >=3.6
+    - python >=3.6,<=3.10
     - qtpy
     - textdistance
     - ryvencore ==0.4.*
