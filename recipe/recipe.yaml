@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  name: ryvencore-qt
+  version: "0.5.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: f24f883e931ebce76d1445ac0c4900399cc63b59e52693ae7a1b1783089dd068
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - pyside2
+    - python >=${{ python_min }},<3.11a0
+    - qtpy
+    - textdistance
+    - ryvencore ==0.5
+    - waiting
+
+tests:
+  - python:
+      imports:
+        - ryvencore_qt
+        - ryvencore_qt.resources
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: Qt frontend for ryvencore; Library for building Visual Node Editors
+  license: LGPL-2.1-only
+  license_file: LICENSE
+  homepage: https://github.com/leon-thomm/ryvencore-qt
+
+extra:
+  recipe-maintainers:
+    - leon-thomm
+    - jan-janssen
